@@ -1,0 +1,27 @@
+.btn {
+    @at-root a#{&} {
+        text-decoration: none;
+        color: $body-fg;
+    }
+
+    display: inline-flex;
+    font-size: 18px;
+    font-weight: 500;
+
+    &.rounded {
+        width: 210px;
+        height: 68px;
+        border-radius: 192px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &.accent {
+        background-color: $accent-bg;
+        color: #fff;
+        font-weight: $bold;
+        border: 2px solid #fff;
+        box-shadow: 0 30px 50px 0 rgba(#A8164B,0.15);
+    }
+}

@@ -19,7 +19,8 @@ function generatePath(dest) {
             root: 'src',
             scss: 'src/scss',
             twig: 'src/twig',
-            twigdata: 'src/twigdata'
+            twigdata: 'src/twigdata',
+            assets: 'src/assets'
         }
     }
 }
@@ -113,6 +114,12 @@ function compileTwig(done){
     done();
 }
 
+function copyAssets(done){
+    gulp.src(`${_path.src.assets}/**/*`)
+    .pipe(gulp.dest(_path.dist.assets));
+    done();
+}
+
 function startServer(done){
     _server = require('browser-sync').create();
 
@@ -153,6 +160,6 @@ const devProd = (done) => {
 }
 
 
-const build = gulp.parallel(compileSCSS, compileTwig);
+const build = gulp.parallel(compileSCSS, compileTwig, copyAssets);
 exports.default = gulp.series(devBuild, clean, build, startServer, watch);
 exports.build = gulp.series(devProd, clean, build);
