@@ -1,0 +1,43 @@
+.site-title {
+    flex: 1;
+    text-align: center;
+    font-style: italic;
+
+    @include lg-and-up {
+        flex: initial;
+    }
+}
+
+.nav-link {
+    color: #747582;
+    text-decoration: none;
+    padding: 0.25*$baseline;
+
+    &:hover {
+        color: #282C4B;
+    }
+
+    @include lg-and-up {
+        & + & {
+            margin-left: 3.75rem;
+        }
+    }
+}
+
+.nav-talk {
+    text-align: center;
+    color: $primary-bg;
+    font-weight: $bold;
+
+    @include lg-and-up {
+        border: 2px solid rgba($color: $accent-bg, $alpha: 0.5);
+        width: 143px;
+        height: 55px;
+        border-radius: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #282C4B;
+        font-size: 14px;
+    }
+}
