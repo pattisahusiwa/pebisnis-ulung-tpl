@@ -37,6 +37,7 @@ jobs:
         if: steps.npm-packages-cache.outputs.cache-hit != 'true'
         run: |
             git config --global url."https://github.com".insteadOf git+ssh://git@github.com
+            git config --global -l
             pnpm install
 
       - name: Build the package
