@@ -35,7 +35,9 @@ jobs:
             ${{ runner.os }}-npm-
       - name: Install dependencies
         if: steps.npm-packages-cache.outputs.cache-hit != 'true'
-        run: pnpm install
+        run: |
+            git config --global url."https://github.com".insteadOf git+ssh://git@github.com
+            pnpm install
 
       - name: Build the package
         run: pnpm run build
