@@ -20,8 +20,11 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
-      - name: Install dependencies
-        run: yarn install
+      - name: Print environment variables
+        run: env
+
+      # - name: Install dependencies
+      #   run: yarn install
 
     #   - name: Install PNPM
     #     uses: pnpm/action-setup@v2.0.1
