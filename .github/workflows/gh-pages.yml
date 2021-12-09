@@ -20,8 +20,13 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
-      - name: Print environment variables
-        run: echo ${{ secrets.CSSTRON_TOKEN }}
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 6.x.x
+
+      - name: Check installed pnpm
+        run: pnpm -v
 
       # - name: Install dependencies
       #   run: yarn install
