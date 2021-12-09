@@ -27,6 +27,6 @@
     "sass": "^1.44.0"
   },
   "dependencies": {
-    "csstron": "github:pattisahusiwa/csstron"
+    "csstron": "git+https://github.com/pattisahusiwa/csstron.git"
   }
 }
