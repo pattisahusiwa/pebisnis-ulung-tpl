@@ -21,7 +21,7 @@ jobs:
           node-version: ${{ matrix.node }}
 
       - name: Print environment variables
-        run: echo $CSSTRON_TOKEN
+        run: echo ${{ secrets.CSSTRON_TOKEN }}
 
       # - name: Install dependencies
       #   run: yarn install
