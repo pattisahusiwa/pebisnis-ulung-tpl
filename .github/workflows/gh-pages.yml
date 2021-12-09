@@ -37,8 +37,8 @@ jobs:
       - name: Adding Known Hosts
         run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Test ssh connection
-        run: ssh -T git@github.com
+      - name: Test get private repository information
+        run: git ls-remote --tags --heads git+ssh://git@github.com/pattisahusiwa/csstron.git
 
       # - name: Install dependencies
       #   run: yarn install
