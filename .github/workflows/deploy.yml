@@ -33,12 +33,16 @@ jobs:
           key: ${{ runner.os }}-npm-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-npm-
+
+      - name: Change git global config
+        run: git config --global url."https://github.com".insteadOf git+ssh://git@github.com
+
+      - name: List all git global config
+        run: git config --global -l
+
       - name: Install dependencies
         if: steps.npm-packages-cache.outputs.cache-hit != 'true'
-        run: |
-            git config --global url."https://github.com".insteadOf git+ssh://git@github.com
-            git config --global -l
-            pnpm install
+        run: pnpm install
 
       - name: Build the package
         run: pnpm run build
