@@ -35,7 +35,7 @@ jobs:
             ${{ runner.os }}-npm-
 
       - name: Change git global config
-        run: git config --global url."https://github.com/".insteadOf git@github.com:
+        run: git config --global url."https://github.com/".insteadOf "git@github.com:"
 
       - name: List all git global config
         run: git config --global -l
