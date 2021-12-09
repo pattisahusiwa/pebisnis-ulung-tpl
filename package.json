@@ -28,9 +28,5 @@
   },
   "dependencies": {
     "csstron": "github:pattisahusiwa/csstron"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/pattisahusiwa/csstron.git"
   }
 }
