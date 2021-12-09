@@ -1,0 +1,63 @@
+name: gh-pages
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [16]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node.js ${{ matrix.node }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Show npm version
+        run: npm -v
+
+      - name: Show yarn version
+        run: yarn -v
+
+      - name: Show pnpm version
+        run: pnpm -v
+
+    #   - name: Install PNPM
+    #     uses: pnpm/action-setup@v2.0.1
+    #     with:
+    #       version: 6.x.x
+
+    #   - name: Cache NPM packages
+    #     id: npm-packages-cache
+    #     uses: actions/cache@v2
+    #     with:
+    #       path: node_modules
+    #       key: ${{ runner.os }}-npm-${{ hashFiles('**/pnpm-lock.yaml') }}
+    #       restore-keys: |
+    #         ${{ runner.os }}-npm-
+
+    #   - name: Change git global config
+    #     run: git config --global url."https://github.com/".insteadOf "git@github.com:"
+
+    #   - name: List all git global config
+    #     run: git config --global -l
+
+    #   - name: Install dependencies
+    #     if: steps.npm-packages-cache.outputs.cache-hit != 'true'
+    #     run: pnpm install
+
+    #   - name: Build the package
+    #     run: pnpm run build
+
+    #   - name: Deploy to github pages
+    #     uses: peaceiris/actions-gh-pages@v3
+    #     with:
+    #       github_token: ${{ secrets.GITHUB_TOKEN }}
+    #       publish_dir: ./dist
