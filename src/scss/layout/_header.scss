@@ -8,16 +8,38 @@
     }
 }
 
+.mainnav {
+    background-color: rgba($color: $body-fg, $alpha: 0.95);
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    padding-bottom: 2*$baseline;
+
+    @include lg-and-up {
+        position: relative;
+        padding-bottom: 0;
+        background-color: transparent;
+    }
+}
+
 .nav-link {
-    color: #747582;
+    color: #CED1E5;
     text-decoration: none;
-    padding: 0.25*$baseline;
+    padding: 0.25*$baseline 0.5*$baseline;
+
 
     &:hover {
-        color: #282C4B;
+        color: #fff;
     }
 
     @include lg-and-up {
+        color: #747582;
+
+        &:hover {
+            color: #282C4B;
+        }
+
         & + & {
             margin-left: 3.75rem;
         }
@@ -26,7 +48,7 @@
 
 .nav-talk {
     text-align: center;
-    color: $primary-bg;
+    color: $accent-bg;
     font-weight: $bold;
 
     @include lg-and-up {
