@@ -2,14 +2,6 @@
     background: linear-gradient(0deg, #FEFAFC 0, #fff 100%);
 }
 
-.hero-left {
-    max-width: 410px;
-
-    @include md-and-up{
-        max-width: 624px;
-    }
-}
-
 .hero-verify {
     color: #F17216;
 }
