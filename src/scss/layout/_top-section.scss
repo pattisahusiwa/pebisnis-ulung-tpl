@@ -2,10 +2,6 @@
     background: linear-gradient(0deg, #FEFAFC 0, #fff 100%);
 }
 
-.hero-verify {
-    color: #F17216;
-}
-
 .hero-title {
     color: #282C4B;
     font-weight: $bold;
@@ -29,7 +25,7 @@
         &::after{
             content: "";
             position: absolute;
-            border-top: 4px solid #FF698D;
+            border-top: 4px solid $primary-bg;
             border-radius: 50%;
             bottom: -30px;
             left: 0;

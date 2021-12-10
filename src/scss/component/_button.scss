@@ -17,11 +17,11 @@
         justify-content: center;
     }
 
-    &.accent {
-        background-color: $accent-bg;
-        color: #fff;
+    &.primary {
+        background-color: $primary-bg;
+        color: $primary-fg;
         font-weight: $bold;
-        border: 2px solid #fff;
-        box-shadow: 0 30px 50px 0 rgba(#A8164B,0.15);
+        border: 2px solid $primary-fg;
+        box-shadow: 0 30px 50px 0 rgba($primary-bg,0.15);
     }
 }

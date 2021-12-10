@@ -52,7 +52,7 @@
     font-weight: $bold;
 
     @include lg-and-up {
-        border: 2px solid rgba($color: $accent-bg, $alpha: 0.5);
+        border: 2px solid rgba($color: $primary-bg, $alpha: 0.5);
         width: 143px;
         height: 55px;
         border-radius: 80px;
