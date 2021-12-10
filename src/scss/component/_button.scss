@@ -6,7 +6,7 @@
 
     display: inline-flex;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: $bold;
 
     &.rounded {
         width: 210px;
@@ -20,8 +20,10 @@
     &.primary {
         background-color: $primary-bg;
         color: $primary-fg;
-        font-weight: $bold;
         border: 2px solid $primary-fg;
+    }
+
+    &.shadow {
         box-shadow: 0 30px 50px 0 rgba($primary-bg,0.15);
     }
 }
