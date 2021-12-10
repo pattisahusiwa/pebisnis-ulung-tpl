@@ -5,13 +5,13 @@
 .hero-title {
     color: #282C4B;
     font-weight: $bold;
-    font-size: $h3-size;
+    font-size: $h2-size;
 
     @include sm-and-up{
         font-size: $h1-size;
     }
 
-    @include md-and-up{
+    @include lg-and-up{
         font-size: 58px;
         line-height: 80px;
         letter-spacing: 0.02em;
@@ -19,20 +19,29 @@
 }
 
 .hero-title-sign {
-    @include md-and-up {
         position: relative;
 
         &::after{
             content: "";
             position: absolute;
-            border-top: 4px solid $primary-bg;
-            border-radius: 50%;
-            bottom: -30px;
             left: 0;
             width: 100%;
-            height: 35px;
+            border-top: 2px solid $primary-bg;
+            border-radius: 50%;
+            bottom: -15px;
+            height: 15px;
+
+            @include sm-and-up {
+                bottom: -25px;
+                height: 25px;
+            }
+
+            @include lg-and-up {
+                border-top: 4px solid $primary-bg;
+                bottom: -45px;
+                height: 45px;
+            }
         }
-    }
 }
 
 .text-desc{
