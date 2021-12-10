@@ -35,11 +35,9 @@
     }
 }
 
-.hero-desc {
+.text-desc{
     color: #747582;
 
-    @include md-and-up{
-        font-size: 20px;
-        line-height: 36px;
-    }
+    font-size: 20px;
+    line-height: 36px;
 }
