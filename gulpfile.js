@@ -143,6 +143,7 @@ function watch(done){
     gulp.watch(`${_path.src.scss}/**/*.scss`, compileSCSS);
     gulp.watch(`${_path.src.twig}/**/*.twig`, gulp.series(compileTwig, reload));
     gulp.watch(`${_path.src.twigdata}/**/*.json`, gulp.series(compileTwig, reload));
+    gulp.watch(`${_path.src.assets}/**/*`, gulp.series(copyAssets, reload));
 
     done();
 }
