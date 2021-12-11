@@ -2,3 +2,35 @@
     background-color: $dark-bg;
     color: $dark-fg;
 }
+
+.box-shadow {
+    --box-shadow-color: red;
+    box-shadow: -40px 100px 70px var(--box-shadow-color);
+    background-color: white;
+    position: relative;
+
+    &::after {
+        content: "";
+        box-shadow: 40px 0 70px var(--box-shadow-color);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.testimony-bg {
+    background: linear-gradient(0deg, #FFF8F9 0, #fff 100%);
+}
+
+.testimony {
+    position: absolute;
+    max-width: 480px;
+    top: 0;
+    right: 0;
+
+    & > .box-shadow {
+        --box-shadow-color: rgba(122, 79, 79, 0.07);
+    }
+}
