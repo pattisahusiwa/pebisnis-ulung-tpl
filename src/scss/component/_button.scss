@@ -3,6 +3,10 @@
         text-decoration: none;
         color: $body-fg;
     }
+    @at-root button#{&} {
+        border: none;
+    }
+
 
     display: inline-flex;
     font-size: 18px;
@@ -20,11 +24,16 @@
     &.primary {
         background-color: $primary-bg;
         color: $primary-fg;
-        border: 2px solid $primary-fg;
+
+        &:hover {
+            border: 3px solid $primary-fg;
+        }
     }
 
-    &.shadow {
-        box-shadow: 0 30px 50px 0 rgba($primary-bg,0.15);
+    &.shadow-hover {
+        &:hover {
+            box-shadow: 0 30px 50px 0 rgba($primary-bg,0.15);
+        }
     }
 
     &.outline {
