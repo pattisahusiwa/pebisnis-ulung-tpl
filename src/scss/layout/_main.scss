@@ -45,3 +45,9 @@
         max-width: 33%;
     }
 }
+
+.project {
+    max-width: 370px;
+    margin-top: $baseline;
+    padding: 0.5*$baseline;
+}
