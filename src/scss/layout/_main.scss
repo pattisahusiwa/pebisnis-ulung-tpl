@@ -4,7 +4,7 @@
 }
 
 .box-shadow {
-    --box-shadow-color: red;
+    --box-shadow-color: rgba(121, 121, 121, 0.05);
     box-shadow: -40px 100px 70px var(--box-shadow-color);
     background-color: white;
     position: relative;
