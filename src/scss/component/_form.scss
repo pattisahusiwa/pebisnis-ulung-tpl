@@ -1,0 +1,39 @@
+.form-horizontal {
+    label {
+        display: block;
+        font-weight: $bold;
+    }
+
+    input {
+        display: block;
+    }
+}
+
+input, textarea {
+    width: 100%;
+    background-color: #FFF8F8;
+    border: 0;
+    padding: 0.5*$baseline;
+
+    &:focus {
+        outline-color: darken($color: #FFF8F8, $amount: 10);
+    }
+
+    &::placeholder {
+        color: #747582;
+    }
+}
+
+input[type="date"] {
+    &::-webkit-datetime-edit-month-field,
+    &::-webkit-datetime-edit-day-field,
+    &::-webkit-datetime-edit-year-field,
+    &::-webkit-datetime-edit-text
+    {
+        color: #747582;
+    }
+}
+
+button {
+    cursor: pointer;
+}
