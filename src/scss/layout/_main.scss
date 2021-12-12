@@ -19,18 +19,3 @@
         bottom: 0;
     }
 }
-
-.testimony-bg {
-    background: linear-gradient(0deg, #FFF8F9 0, #fff 100%);
-}
-
-.testimony {
-    position: absolute;
-    max-width: 480px;
-    top: 0;
-    right: 0;
-
-    & > .box-shadow {
-        --box-shadow-color: rgba(122, 79, 79, 0.07);
-    }
-}

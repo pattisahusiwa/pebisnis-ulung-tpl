@@ -1,0 +1,27 @@
+.testimony-gradient {
+    background: linear-gradient(-10deg, rgba(#FFF5F7, 1) 0%, rgba(255, 1, 62, 0) 100%);
+}
+
+.testimony-bg {
+
+    @include md-and-up {
+        position: relative;
+        min-height: 620px;
+        background: no-repeat url(world.png);
+    }
+}
+
+.testimony-box {
+    padding-bottom: 2*$baseline;
+
+    @include md-and-up {
+        max-width: 480px;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    & > .box-shadow {
+        --box-shadow-color: rgba(122, 79, 79, 0.07);
+    }
+}
