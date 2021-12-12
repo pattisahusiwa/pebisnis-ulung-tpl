@@ -28,7 +28,6 @@
     text-decoration: none;
     padding: 0.25*$baseline 0.5*$baseline;
 
-
     &:hover {
         color: #fff;
     }
@@ -41,25 +40,7 @@
         }
 
         & + & {
-            margin-left: 3.75rem;
+            margin-left: $baseline;
         }
-    }
-}
-
-.nav-talk {
-    text-align: center;
-    color: $accent-bg;
-    font-weight: $bold;
-
-    @include lg-and-up {
-        border: 2px solid rgba($color: $primary-bg, $alpha: 0.5);
-        width: 143px;
-        height: 55px;
-        border-radius: 80px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #282C4B;
-        font-size: 14px;
     }
 }

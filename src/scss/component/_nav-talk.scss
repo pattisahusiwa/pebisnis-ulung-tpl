@@ -1,0 +1,25 @@
+.nav-talk {
+    margin-left: 0.5*$baseline;
+    padding-top: $baseline;
+
+    @include lg-and-up {
+        padding-top: 0;
+        margin-left: $baseline;
+    }
+
+    & > a {
+        color: #fff;
+
+        @include lg-and-up {
+            color: $body-fg;
+        }
+    }
+
+    & > .outline {
+        border-color: $primary-bg;
+
+        @include lg-and-up {
+            border-color: rgba($color: $primary-bg, $alpha: 0.5);
+        }
+    }
+}
