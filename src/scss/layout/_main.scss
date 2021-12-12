@@ -25,8 +25,23 @@
     flex-wrap: wrap;
 }
 
-// .wrap-center {
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: space-evenly;
-// }
+.service {
+    & + & {
+        margin-top: $baseline;
+
+        @include md-and-up {
+            margin-top: 0;
+        }
+    }
+
+    width: 100%;
+    padding: $baseline;
+
+    @include md-and-up {
+        max-width: 50%;
+    }
+
+    @include lg-and-up {
+        max-width: 33%;
+    }
+}
