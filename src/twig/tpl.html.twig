@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta name="robots" content="noindex nofollow noarchive noimageindex" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pebisnis Ulung Template - Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/main.min.css">
+  </head>
+
+  <body>
+    <div class="top-section-bg">
+      <div class="boxed">
+        {% include "layout/_header.twig" %}
+        {% include "parts/_hero.twig" %}
+      </div>
+    </div>
+    <div class="boxed">
+      {% include "parts/_client.twig" %}
+      {% include "parts/_service.twig" %}
+    </div>
+    {% include "parts/_why.twig" %}
+    {% include "parts/_projects.twig" %}
+    {% include "parts/_testimonial.twig" %}
+    {% include "parts/_contact.twig" %}
+
+    <footer class="dark-bg">
+      {% include "layout/_footer.twig" %}
+    </footer>
+  </body>
+
+</html>

@@ -6,32 +6,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pebisnis Ulung Template</title>
+    <title>Pebisnis Ulung Template - Demo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/main.min.css">
   </head>
 
-  <body>
-    <div class="top-section-bg">
-      <div class="boxed">
-        {% include "layout/_header.twig" %}
-        {% include "parts/_hero.twig" %}
-      </div>
-    </div>
-    <div class="boxed">
-      {% include "parts/_client.twig" %}
-      {% include "parts/_service.twig" %}
-    </div>
-    {% include "parts/_why.twig" %}
-    {% include "parts/_projects.twig" %}
-    {% include "parts/_testimonial.twig" %}
-    {% include "parts/_contact.twig" %}
+  <body class="index-page">
+    <div class="welcome p-1">
+      <h1 class="mb-1">Pebisnis Ulung Template</h1>
 
-    <footer class="dark-bg">
-      {% include "layout/_footer.twig" %}
-    </footer>
+      <nav class="welcome-nav d-flex justify-content-center">
+        <a href="tpl.html" class="d-inline-flex flex-column align-items-center">
+          {% include "icons/play.svg" %}
+          <span class="mt-0.25">View template</span>
+        </a>
+        <a href="https://github.com/pts-tpl/pebisnis-ulung-tpl" class="d-inline-flex flex-column align-items-center ml-1">
+          {% include "icons/github.svg" %}
+          <span class="mt-0.25">Source code</span>
+        </a>
+      </nav>
+
+      <small class="d-block mt-2">&copy;2021 <a href="https://github.com/pattisahusiwa">asispts</a></small>
+    </div>
   </body>
 
 </html>
