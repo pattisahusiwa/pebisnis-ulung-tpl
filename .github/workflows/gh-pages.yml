@@ -1,45 +1,41 @@
 name: gh-pages
 on:
-  push:
-    branches:
-      - master
+    push:
+        branches:
+            - master
+    pull_request:
 jobs:
-  deploy:
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        node: [16]
+    deploy:
+        runs-on: ubuntu-latest
 
-    runs-on: ${{ matrix.os }}
+        steps:
+            - uses: actions/checkout@v3
 
-    steps:
-      - uses: actions/checkout@v2
+            - name: Install pnpm
+              uses: pnpm/action-setup@v2
+              with:
+                  version: 8.x.x
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 6.x.x
+            - name: Setup Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+                  cache: "pnpm"
 
-      - name: Setup Node.js ${{ matrix.node }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node }}
-          cache: "pnpm"
+            - name: Install SSH key
+              uses: shimataro/ssh-key-action@v2
+              with:
+                  key: ${{ secrets.CSSTRON_TOKEN }}
+                  known_hosts: "unknown"
 
-      - name: Install SSH key
-        uses: shimataro/ssh-key-action@v2
-        with:
-          key: ${{ secrets.CSSTRON_TOKEN }}
-          known_hosts: "unknown"
+            - name: Add Known Hosts
+              run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
-      - name: Adding Known Hosts
-        run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+            - run: pnpm install
+            - run: pnpm run build
 
-      - run: pnpm install
-      - run: pnpm run build
-
-      - name: Deploy to github pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+            - name: Deploy to github pages
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./dist
